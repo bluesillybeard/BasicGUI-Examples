@@ -28,7 +28,9 @@ Adding the sources into your project is easier, although can lead to messy code 
 ## Actually making it work
 
 First, you need to create a class that implents the IDisplay interface. Each method is documented in the interface.<br>
-If you're using Raylib or VRender, there are pre-made display implementations that you can simply copy.
+If you're using VRender, there are pre-made display implementations that you can simply copy, 
+however I would reccommend looking at the VRender examples since there are some more steps you must follow
+in order to get text rendering to work.
 
 Once you have implemented IDisplay, you can create your own test application. The simplest possible one where there is a single text element in the center is like so:
 

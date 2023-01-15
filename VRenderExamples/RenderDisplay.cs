@@ -54,6 +54,7 @@ public sealed class RenderDisplay : IDisplay
             y0 = y1;
             y1 = temp;
         }
+        
         for(int xi=x0; xi<x1; xi++)
         {
             for(int yi=y0; yi<y1; yi++)

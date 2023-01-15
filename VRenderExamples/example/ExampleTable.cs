@@ -15,6 +15,7 @@ public class ExampleTable
             VSync = true,
             BackgroundColor = 0x000000FF,
             TargetFrameTime = 1/60f,
+            WindowTitle = "Table example",
         };
         IRender render = RenderUtils.CreateIdealRenderOrDie(settings);
 
@@ -31,10 +32,12 @@ public class ExampleTable
         IDisplay display = new RenderDisplay();
         //a BasicGUIPlane is the main class responsible for, well, BasicGUI. You could make a RootNode directly, but I advise against it.
         BasicGUIPlane plane = new BasicGUIPlane(800, 600, display);
+        MarginContainer margin = new MarginContainer(plane.GetRoot(), 20);
         //First, we want to put a table on the left center.
-        IContainerNode leftCenter = new LayoutContainer(plane.GetRoot(), VAllign.center, HAllign.left);
+        LayoutContainer leftCenter = new LayoutContainer(margin, VAllign.center, HAllign.left);
+        ColorBackgroundElement bg = new ColorBackgroundElement(margin, 0x333333ff);
         //Add the table as well.
-        TableContainer table = new TableContainer((container) => {return new ColorOutlineRectElement(container, 0x666666ff, null, null, 5);}, leftCenter, 2, 10);
+        TableContainer table = new TableContainer((container) => {return new ColorOutlineRectElement(container, 0xaaaaaaff, null, null, 5);}, leftCenter, 2, 10);
         //Add the elements to the table
         int fontSize = 15;
         uint textColor = 0xffffffff;
@@ -50,7 +53,7 @@ public class ExampleTable
         new TextElement(table, 0xff33ccff,  fontSize, "Multicolored ", font, display);
 
         //And of course, the mysterious centered text.
-        CenterContainer center = new CenterContainer(plane.GetRoot());
+        CenterContainer center = new CenterContainer(margin);
         new TextElement(center, 0xff3366ff, fontSize, "Mysteriously Centered Text", font, display);
 
         render.OnRender += (delta) => {frame(delta, render, display, plane);};
