@@ -16,7 +16,6 @@ public sealed class StackingContainer : AbstractContainerNode
     {
         this.direction = direction;
         this.separation = separation;
-        parent.AddChild(this);
     }
 
     protected override void PositionChildren()

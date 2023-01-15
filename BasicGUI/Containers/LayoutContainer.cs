@@ -20,7 +20,6 @@ public sealed class LayoutContainer : AbstractContainerNode
     {
         this.vertical = vertical;
         this.horizontal = horizontal;
-        parent.AddChild(this);
     }
     public LayoutContainer(IContainerNode parent, VAllign vertical, HAllign horizontal) : this(parent, new List<INode>(), vertical, horizontal) {}
     public VAllign vertical;

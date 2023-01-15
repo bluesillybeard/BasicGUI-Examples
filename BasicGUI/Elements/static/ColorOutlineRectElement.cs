@@ -10,7 +10,6 @@ public sealed class ColorOutlineRectElement : AbstractElementNode
         Height = height;
         this.rgba = rgba;
         this.thickness = thickness;
-        parent.AddChild(this);
     }
     public uint rgba;
     public int thickness;

@@ -11,7 +11,6 @@ public sealed class TextElement : AbstractElementNode
         _text = text;
         this.font = font;
         SetText(text);
-        parent.AddChild(this);
     }
     public uint rgba;
     public int fontSize;

@@ -8,7 +8,6 @@ public sealed class ColorRectElement : AbstractElementNode
         Width = width;
         Height = height;
         this.rgba = rgba;
-        parent.AddChild(this);
     }
     public uint rgba;
     public override void Draw(IDisplay display)
