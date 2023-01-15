@@ -1,0 +1,3 @@
+[submodule "VRender"]
+	path = VRender
+	url = https://github.com/bluesillybeard/VRender
