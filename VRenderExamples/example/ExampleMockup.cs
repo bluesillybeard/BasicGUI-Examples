@@ -58,7 +58,7 @@ public sealed class ExampleMockup
             WindowTitle = "a GUI mockup example",
             BackgroundColor = 0x000000FF,
             TargetFrameTime = 1/60f,
-            VSync = false,
+            VSync = true,
         };
 
         IRender render = RenderUtils.CreateIdealRenderOrDie(settings);
