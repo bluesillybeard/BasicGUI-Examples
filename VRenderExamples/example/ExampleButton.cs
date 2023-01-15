@@ -26,7 +26,7 @@ public class ExampleButton
 
         CenterContainer container = new CenterContainer(plane.GetRoot());
         ButtonElement button = new ButtonElement(container, ButtonHover, ButtonClick, ButtonFrame);
-        ColorRectElement rect = new ColorRectElement(button, 0xFF66FFFF, 120, 100);
+        ColorRectElement rect = new ColorRectElement(button, 0xFF66FFFF, 120, 100, 0);
         //Render handles the looperoni. Thankfully my past self included a nice little callback for just this kind of occasion.
         // I'm still deciding if using static variables or passing it like this is better.
         // obviously separating it to be entirely object based would be ideal in this case.

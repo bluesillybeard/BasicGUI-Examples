@@ -158,10 +158,10 @@ public sealed class RenderDisplay : IDisplay
         IRender.CurrentRender.DrawTextureDirect(renderImage, x, y, width, height, srcx, srcy, srcwidth, srcheight);
     }
     //Draw using a default font
-    public void DrawText(int fontSize, string text, NodeBounds bounds, uint rgba)
+    public void DrawText(int fontSize, string text, NodeBounds bounds, uint rgba, byte depth)
     {
         //Draw text with default font.
-        DrawText(defaultFont, fontSize, text, bounds, rgba);
+        DrawText(defaultFont, fontSize, text, bounds, rgba, depth);
     }
     //set the rendered size of a text element using the default font.
     public void TextBounds(int fontSize, string text, out int width, out int height)
@@ -171,7 +171,7 @@ public sealed class RenderDisplay : IDisplay
         width = text.Length*fontSize;
         height = fontSize;
     }
-    public void DrawText(object font, int fontSize, string text, NodeBounds bounds, uint rgba)
+    public void DrawText(object font, int fontSize, string text, NodeBounds bounds, uint rgba, byte depth)
     {
         RenderFont rFont = (RenderFont) font;
         IRender render = IRender.CurrentRender;

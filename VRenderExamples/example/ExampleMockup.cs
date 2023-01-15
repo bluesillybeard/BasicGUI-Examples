@@ -78,19 +78,19 @@ public sealed class ExampleMockup
         {
             var topLeft = new LayoutContainer(root, VAllign.top, HAllign.left);
             var rightStack = new StackingContainer(topLeft, StackDirection.right, fontSize);
-            new TextElement(rightStack, 0xffffffff, fontSize, "File", font, display);
-            new TextElement(rightStack, 0xffffffff, fontSize, "View", font, display);
-            new TextElement(rightStack, 0xffffffff, fontSize, "Settings", font, display);
-            new TextElement(rightStack, 0xffffffff, fontSize, "Transform", font, display);
+            new TextElement(rightStack, 0xffffffff, fontSize, "File", font, display, 0);
+            new TextElement(rightStack, 0xffffffff, fontSize, "View", font, display, 0);
+            new TextElement(rightStack, 0xffffffff, fontSize, "Settings", font, display, 0);
+            new TextElement(rightStack, 0xffffffff, fontSize, "Transform", font, display, 0);
         }
         //Vertices/Triangles menu
         {
             var topRight = new LayoutContainer(root, VAllign.top, HAllign.right);
             var downStack = new StackingContainer(topRight, StackDirection.down);
             var buttons = new StackingContainer(downStack, StackDirection.right, fontSize);
-            new TextElement(buttons, 0xffffffff, fontSize, "Vertices", font, display);
-            new TextElement(buttons, 0xffffffff, fontSize, "Triangles", font, display);
-            var table = new TableContainer((container) => {return new ColorOutlineRectElement(container, 0x666666ff, null, null, 3);}, downStack, 6, 5);
+            new TextElement(buttons, 0xffffffff, fontSize, "Vertices", font, display, 0);
+            new TextElement(buttons, 0xffffffff, fontSize, "Triangles", font, display, 0);
+            var table = new TableContainer((container) => {return new ColorOutlineRectElement(container, 0x666666ff, null, null, 3, 0);}, downStack, 6, 5);
             //The table has a lot, so I put it into its own function.
             FillTable(table, font, display);
         }
@@ -113,21 +113,21 @@ public sealed class ExampleMockup
     private static void FillTable(TableContainer table, RenderFont font, IDisplay disp)
     {
         //top row. Hard-coded because im lazy lol
-        new TextElement(table, 0xffffffff, fontSize, "ind", font, disp);
-        new TextElement(table, 0xffffffff, fontSize, "0-0", font, disp);
-        new TextElement(table, 0xffffffff, fontSize, "0-1", font, disp);
-        new TextElement(table, 0xffffffff, fontSize, "0-2", font, disp);
-        new TextElement(table, 0xffffffff, fontSize, "1-0", font, disp);
-        new TextElement(table, 0xffffffff, fontSize, "1-1", font, disp);
+        new TextElement(table, 0xffffffff, fontSize, "ind", font, disp, 0);
+        new TextElement(table, 0xffffffff, fontSize, "0-0", font, disp, 0);
+        new TextElement(table, 0xffffffff, fontSize, "0-1", font, disp, 0);
+        new TextElement(table, 0xffffffff, fontSize, "0-2", font, disp, 0);
+        new TextElement(table, 0xffffffff, fontSize, "1-0", font, disp, 0);
+        new TextElement(table, 0xffffffff, fontSize, "1-1", font, disp, 0);
         //The next rows are procedurally generation, kinda. Not really lol
         for(int i=0; i<50; i++)
         {
-            new TextElement(table, 0xffffffff, fontSize, i.ToString(), font, disp);
-            new TextElement(table, 0xffffffff, fontSize, "x", font, disp);
-            new TextElement(table, 0xffffffff, fontSize, "y", font, disp);
-            new TextElement(table, 0xffffffff, fontSize, "z", font, disp);
-            new TextElement(table, 0xffffffff, fontSize, "x", font, disp);
-            new TextElement(table, 0xffffffff, fontSize, "y", font, disp);
+            new TextElement(table, 0xffffffff, fontSize, i.ToString(), font, disp, 0);
+            new TextElement(table, 0xffffffff, fontSize, "x", font, disp, 0);
+            new TextElement(table, 0xffffffff, fontSize, "y", font, disp, 0);
+            new TextElement(table, 0xffffffff, fontSize, "z", font, disp, 0);
+            new TextElement(table, 0xffffffff, fontSize, "x", font, disp, 0);
+            new TextElement(table, 0xffffffff, fontSize, "y", font, disp, 0);
         }
     }
 }

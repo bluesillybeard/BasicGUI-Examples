@@ -35,26 +35,26 @@ public class ExampleTable
         MarginContainer margin = new MarginContainer(plane.GetRoot(), 20);
         //First, we want to put a table on the left center.
         LayoutContainer leftCenter = new LayoutContainer(margin, VAllign.center, HAllign.left);
-        ColorBackgroundElement bg = new ColorBackgroundElement(margin, 0x333333ff);
+        ColorBackgroundElement bg = new ColorBackgroundElement(margin, 0x333333ff, 0);
         //Add the table as well.
-        TableContainer table = new TableContainer((container) => {return new ColorOutlineRectElement(container, 0xaaaaaaff, null, null, 5);}, leftCenter, 2, 10);
+        TableContainer table = new TableContainer((container) => {return new ColorOutlineRectElement(container, 0xaaaaaaff, null, null, 5, 1);}, leftCenter, 2, 10);
         //Add the elements to the table
         int fontSize = 15;
         uint textColor = 0xffffffff;
-        new TextElement(table, textColor,  fontSize, "Fruit ",         font, display);
-        new TextElement(table, textColor,  fontSize, "Color ",         font, display);
-        new TextElement(table, 0xffff00ff, fontSize, "Banana ",        font, display);
-        new TextElement(table, 0xffff00ff, fontSize, "Yellow ",        font, display);
-        new TextElement(table, 0xff0000ff, fontSize, "Apple ",         font, display);
-        new TextElement(table, 0xff0000ff, fontSize, "Red ",           font, display);
-        new TextElement(table, 0xff3366ff, fontSize, "Dragonfruit ",   font, display);
-        new TextElement(table, 0xff3366ff, fontSize, "Red ",           font, display);
-        new TextElement(table, 0xff33ccff,  fontSize, "Mango ",        font, display);
-        new TextElement(table, 0xff33ccff,  fontSize, "Multicolored ", font, display);
+        new TextElement(table, textColor,  fontSize, "Fruit ",         font, display, 0);
+        new TextElement(table, textColor,  fontSize, "Color ",         font, display, 0);
+        new TextElement(table, 0xffff00ff, fontSize, "Banana ",        font, display, 0);
+        new TextElement(table, 0xffff00ff, fontSize, "Yellow ",        font, display, 0);
+        new TextElement(table, 0xff0000ff, fontSize, "Apple ",         font, display, 0);
+        new TextElement(table, 0xff0000ff, fontSize, "Red ",           font, display, 0);
+        new TextElement(table, 0xff3366ff, fontSize, "Dragonfruit ",   font, display, 0);
+        new TextElement(table, 0xff3366ff, fontSize, "Red ",           font, display, 0);
+        new TextElement(table, 0xff33ccff,  fontSize, "Mango ",        font, display, 0);
+        new TextElement(table, 0xff33ccff,  fontSize, "Multicolored ", font, display, 0);
 
         //And of course, the mysterious centered text.
         CenterContainer center = new CenterContainer(margin);
-        new TextElement(center, 0xff3366ff, fontSize, "Mysteriously Centered Text", font, display);
+        new TextElement(center, 0xff3366ff, fontSize, "Mysteriously Centered Text", font, display, 0);
 
         render.OnRender += (delta) => {frame(delta, render, display, plane);};
         render.Run();
