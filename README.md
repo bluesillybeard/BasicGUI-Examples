@@ -37,7 +37,6 @@ Once you have implemented IDisplay, you can create your own test application. Th
 
 Somewhere during initialization:<br>
 ```
-//replace "WhateverDisplayYouWantIGuess" with your implementation of IDisplay.
 IDisplay display = new WhateverDisplayYouWantIGuess();
 //make sure the plane is accessible in the main loop
 BasicGUIPlane p = new BasicGUIPlane(windowWidth, windowHeight, display);
