@@ -9,9 +9,10 @@ FEATURES: <br>
 
 ## Git structure
 the BasicGUI folder contains the actual library itself. This is the folder you should copy into your C# project.
+The folder by itself can be found at https://github.com/bluesillybeard/BasicGUI. It is a submodule of this git repo.
 The library is designed to be independent, however integrating its sources into your project allows the best customizability.
 
-This library is simple enough that the code documents itself. If you are confused, the sources and examples will give you the answer. If you're still confused, feel free to ask.
+VRenderExamples contains a series of examples that use VRender as the rendering backend. VRender is of course VRender itself.
 
 ## Getting Started
 
