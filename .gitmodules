@@ -4,3 +4,6 @@
 [submodule "VModel"]
 	path = VModel
 	url = https://github.com/bluesillybeard/VModel
+[submodule "BasicGUI"]
+	path = BasicGUI
+	url = https://github.com/bluesillybeard/BasicGUI
