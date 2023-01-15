@@ -24,11 +24,11 @@ public static class Program
             if(text is null){System.Console.WriteLine("null line!");error=true;continue;}
             error = !int.TryParse(text, out index);
             if(error){System.Console.WriteLine("Not a number apparently");error=true;continue;}
-            if(index == methods.Length)RunThemAll(methods);
             if(index < 0){System.Console.WriteLine("You gonna gimme a positive index");error=true;continue;}
-            if(index >methods.Length-1){System.Console.WriteLine("Out of bounds");error=true;continue;}
+            if(index >methods.Length){System.Console.WriteLine("Out of bounds");error=true;continue;}
         }while(error);
-        methods[index].Invoke(null, null);
+        if(index == methods.Length)RunThemAll(methods);
+        else methods[index].Invoke(null, null);
     }
 
     static MethodInfo[] GetRunners()
