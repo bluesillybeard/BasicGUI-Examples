@@ -50,19 +50,4 @@ public class ExampleTyping
         plane.SetSize((int)size.X, (int)size.Y);
         plane.Iterate();
     }
-    static void ButtonFrame(ButtonElement button)
-    {
-        ColorRectElement? rect = button.drawable as ColorRectElement;
-        if(rect is not null) rect.rgba = 0xFFFFFFFF;
-    }
-    static void ButtonHover(ButtonElement button)
-    {
-        ColorRectElement? rect = button.drawable as ColorRectElement;
-        if(rect is not null) rect.rgba = 0x666666FF;
-    }
-    static void ButtonClick(ButtonElement button)
-    {
-        ColorRectElement? rect = button.drawable as ColorRectElement;
-        if(rect is not null) rect.rgba = 0xFF2222FF;
-    }
 }
