@@ -30,6 +30,7 @@ public class ExampleTyping
         BasicGUIPlane plane = new BasicGUIPlane(800, 600, display);
         CenterContainer container = new CenterContainer(plane.GetRoot());
         TextBoxElement textBox = new TextBoxElement(container, 20, 0xffffffff, font, display, 0);
+        textBox.back = new ColorOutlineRectElement(textBox, 0xFFFFFFFF, 20, 20, 20, 20, 2, 0);
 
         //main loop.
         render.OnRender += (delta) => {frame(delta, render, display, plane);};

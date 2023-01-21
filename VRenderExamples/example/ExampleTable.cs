@@ -36,7 +36,7 @@ public class ExampleTable
         LayoutContainer leftCenter = new LayoutContainer(margin, VAllign.center, HAllign.left);
         ColorBackgroundElement bg = new ColorBackgroundElement(margin, 0x333333ff, 0);
         //Add the table as well.
-        TableContainer table = new TableContainer((container) => {return new ColorOutlineRectElement(container, 0xaaaaaaff, null, null, 5, 1);}, leftCenter, 2, 10);
+        TableContainer table = new TableContainer((container) => {return new ColorOutlineRectElement(container, 0xaaaaaaff, null, null, null, null, 5, 1);}, leftCenter, 2, 10);
         //Add the elements to the table
         int fontSize = 15;
         uint textColor = 0xffffffff;

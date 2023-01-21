@@ -88,7 +88,7 @@ public sealed class ExampleMockup
             var buttons = new StackingContainer(downStack, StackDirection.right, fontSize);
             new TextElement(buttons, 0xffffffff, fontSize, "Vertices", font, display, 0);
             new TextElement(buttons, 0xffffffff, fontSize, "Triangles", font, display, 0);
-            var table = new TableContainer((container) => {return new ColorOutlineRectElement(container, 0x666666ff, null, null, 3, 0);}, downStack, 6, 5);
+            var table = new TableContainer((container) => {return new ColorOutlineRectElement(container, 0x666666ff, null, null, null, null, 3, 0);}, downStack, 6, 5);
             //The table has a lot, so I put it into its own function.
             FillTable(table, font, display);
         }
