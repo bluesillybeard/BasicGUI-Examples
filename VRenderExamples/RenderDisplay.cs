@@ -1,9 +1,10 @@
-using BasicGUI.Core;
 using VRender;
 using VRender.Util;
 using OpenTK.Mathematics;
 using OpenTK.Windowing.GraphicsLibraryFramework;
 using System.Collections.Generic;
+using BasicGUI;
+
 //a Texture and Shader for rendering a font.
 public class RenderFont
 {
@@ -18,9 +19,12 @@ public class RenderFont
 
 public sealed class RenderDisplay : IDisplay
 {
-    #nullable disable
-    public static RenderFont defaultFont;
-    #nullable enable
+
+    public RenderDisplay(RenderFont defaultFont)
+    {
+        this.defaultFont = defaultFont;
+    }
+    public RenderFont defaultFont;
 
     private List<IRenderTextEntity?> texts = new List<IRenderTextEntity?>();
     int textIndex = 0;

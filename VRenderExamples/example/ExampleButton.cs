@@ -1,6 +1,5 @@
 ﻿namespace Examples;
 using BasicGUI;
-using BasicGUI.Core;
 using VRender;
 using OpenTK.Mathematics;
 
@@ -15,7 +14,10 @@ public class ExampleButton
             BackgroundColor = 0x000000FF,
         };
         IRender render = RenderUtils.CreateIdealRenderOrDie(settings);
-        IDisplay display = new RenderDisplay();
+        //We aren't rendering text.
+        #nullable disable
+        IDisplay display = new RenderDisplay(null);
+        #nullable enable
         BasicGUIPlane plane = new BasicGUIPlane(800, 600, display);
         //We also need to load a font, which requires a shader and a texture.
         var shader = render.LoadShader("gui", out var error);
@@ -25,7 +27,7 @@ public class ExampleButton
         RenderFont font = new RenderFont(texture, shader);
 
         CenterContainer container = new CenterContainer(plane.GetRoot());
-        ButtonElement button = new ButtonElement(container, ButtonHover, ButtonClick, ButtonFrame);
+        ButtonElement button = new ButtonElement(container, ButtonHover, null, ButtonClick, null, ButtonFrame);
         ColorRectElement rect = new ColorRectElement(button, 0xFF66FFFF, 120, 100, 0);
         //Render handles the looperoni. Thankfully my past self included a nice little callback for just this kind of occasion.
         // I'm still deciding if using static variables or passing it like this is better.

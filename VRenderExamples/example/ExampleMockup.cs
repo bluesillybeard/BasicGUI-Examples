@@ -43,7 +43,6 @@ Now for the real code for that lol.
 */
 namespace Examples;
 using BasicGUI;
-using BasicGUI.Core;
 using VRender;
 using OpenTK.Mathematics;
 public sealed class ExampleMockup
@@ -62,15 +61,14 @@ public sealed class ExampleMockup
         };
 
         IRender render = RenderUtils.CreateIdealRenderOrDie(settings);
-        IDisplay display = new RenderDisplay();
-        BasicGUIPlane plane = new BasicGUIPlane(800, 600, display);
-        //We also need to load a font, which requires a shader and a texture.
         var shader = render.LoadShader("gui", out var error);
         if(shader is null)throw new Exception("shader no do thing", error);
         var texture = render.LoadTexture("ascii.png", out error);
         if(texture is null)throw new Exception("can't load ascii.png", error);
         RenderFont font = new RenderFont(texture, shader);
-        RenderDisplay.defaultFont = font;
+        IDisplay display = new RenderDisplay(font);
+        BasicGUIPlane plane = new BasicGUIPlane(800, 600, display);
+
 
         IContainerNode root = plane.GetRoot();
         //Now for the hard part, actually building it out lol.

@@ -1,6 +1,5 @@
 ﻿namespace Examples;
 
-using BasicGUI.Core;
 using BasicGUI;
 
 using VRender;
@@ -29,7 +28,7 @@ public class ExampleTable
         RenderFont font = new RenderFont(texture, shader);
 
         //Create the thing that connects BasicGUI and Render together so they can talk to each other.
-        IDisplay display = new RenderDisplay();
+        IDisplay display = new RenderDisplay(font);
         //a BasicGUIPlane is the main class responsible for, well, BasicGUI. You could make a RootNode directly, but I advise against it.
         BasicGUIPlane plane = new BasicGUIPlane(800, 600, display);
         MarginContainer margin = new MarginContainer(plane.GetRoot(), 20);

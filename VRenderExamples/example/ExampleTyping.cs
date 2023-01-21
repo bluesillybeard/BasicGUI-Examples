@@ -1,7 +1,6 @@
 ﻿namespace Examples;
 
 using BasicGUI;
-using BasicGUI.Core;
 
 using VRender;
 
@@ -26,7 +25,7 @@ public class ExampleTyping
         if(texture is null)throw new Exception("can't load ascii.png", err);
         RenderFont font = new RenderFont(texture, shader);
         //Create the thing that connects BasicGUI and Render together so they can talk to each other.
-        IDisplay display = new RenderDisplay();
+        IDisplay display = new RenderDisplay(font);
 
         BasicGUIPlane plane = new BasicGUIPlane(800, 600, display);
         CenterContainer container = new CenterContainer(plane.GetRoot());
