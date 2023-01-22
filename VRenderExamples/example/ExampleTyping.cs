@@ -28,10 +28,12 @@ public class ExampleTyping
         IDisplay display = new RenderDisplay(font);
 
         BasicGUIPlane plane = new BasicGUIPlane(800, 600, display);
-        CenterContainer container = new CenterContainer(plane.GetRoot());
-        TextBoxElement textBox = new TextBoxElement(container, 20, 0xffffffff, font, display, 0);
-        textBox.back = new ColorOutlineRectElement(textBox, 0xFFFFFFFF, 20, 20, 20, 20, 2, 0);
-
+        CenterContainer center = new CenterContainer(plane.GetRoot());
+        StackingContainer container = new StackingContainer(center, StackDirection.right, 20);
+        TextBoxElement textBox1 = new TextBoxElement(container, 20, 0xffffffff, font, display, 0);
+        textBox1.back = new ColorOutlineRectElement(textBox1, 0x005555FF, 20, 20, 20, 20, 2, 0);
+        TextBoxElement textBox2 = new TextBoxElement(container, 20, 0xffffffff, font, display, 0);
+        textBox2.back = new ColorOutlineRectElement(textBox2, 0x664400FF, 20, 20, 20, 20, 2, 0);
         //main loop.
         render.OnRender += (delta) => {frame(delta, render, display, plane);};
         render.OnUpdate += (delta) => {Update(delta, render, display, plane);};
